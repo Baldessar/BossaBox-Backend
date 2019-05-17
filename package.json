@@ -1,0 +1,24 @@
+{
+  "name": "bossabox-backend",
+  "version": "1.0.0",
+  "description": "BossaBox Back-end test",
+  "main": "app.js",
+  "dependencies": {
+    "express": "^4.16.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "node src/app.js",
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Baldessar/BossaBox-Backend.git"
+  },
+  "author": "Baldessar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Baldessar/BossaBox-Backend/issues"
+  },
+  "homepage": "https://github.com/Baldessar/BossaBox-Backend#readme"
+}
