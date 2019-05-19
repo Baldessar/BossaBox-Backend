@@ -1,8 +1,20 @@
-const express = require("express")
-const router = express.Router();
+import express from "express"
+import "../mongoose/tool"
+import mongoose from "mongoose"
 
-router.get("/tools",(req,res) => {
+const router = express.Router();
+const Tool = mongoose.model('tools');
+
+
+router.post("/tools", async (req, res) => {
+	try {
+		const newTool = new Tool(req.body)
+		const tool = await newTool.save()
+		console.log(tool)
+	} catch (error) {
+		throw error
+	}
 	res.end()
 })
 
-module.exports = router
+export default router
