@@ -2,6 +2,7 @@
 /* eslint-disable no-console */
 import mongoose from "mongoose"
 import express from "express"
+import "express-async-errors"
 import morgan from "morgan"
 import "./mongoose/connection"
 
