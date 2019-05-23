@@ -1,5 +1,19 @@
 {
     "presets": [
-        "es2015"
+        "es2015",
+        [
+            "@babel/preset-env",
+            {
+                "targets": {
+                    "node": "current",
+                },
+            },
+        ],
+    ],
+    "plugins": [
+        "transform-object-rest-spread",
+    ],
+    "test": [
+        "jest"
     ]
 }

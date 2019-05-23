@@ -1,31 +1,34 @@
 import express from "express"
 import * as toolManager from "./toolManager"
+import * as toolValidator from "../validations/toolsValidator"
 const router = express.Router();
 
 
-router.get("/", async (req, res) => {
+router.get("/", toolValidator.getTools, async (req, res) => {
 	try {
-		const tag = req.query.tag
-		const tools = await toolManager.getTools(tag)
+		const tools = await toolManager.getTools(req.validData)
 		res.send(tools)
 	} catch (error) {
 		throw (error)
 	}
 })
 
-router.post("/", async (req, res) => {
+router.post("/", toolValidator.insertTool, async (req, res) => {
 	try {
-		const newTool = await toolManager.insertTool(req.body)
+		const newTool = await toolManager.insertTool(req.validData)
 		res.json(newTool)
 	} catch (error) {
 		throw (error)
 	}
 })
 
-router.delete("/:toolid", async (req, res) => {
+router.delete("/:toolid", toolValidator.deleteTool, async (req, res) => {
 	try {
-		const deletedTool = toolManager.deleteTool(req.params.toolid)
-		res.json(deletedTool)
+		/**
+		 * TODO validate mongoose ID
+		 */
+		await toolManager.deleteTool(req.validData)
+		res.json({})
 	} catch (error) {
 		throw error
 	}

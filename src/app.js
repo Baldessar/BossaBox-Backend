@@ -9,14 +9,14 @@ import "./mongoose/connection"
 const app = express();
 
 /* Routes */
-import tools from "./tools/routes"
+import tools from "./tools/toolRoutes"
 mongoose.connect('mongodb://localhost:27017/bossabox', { useNewUrlParser: true });
 
 app.use(morgan("tiny")) // HTTP request logger (can be safely disabled if wanted)
 app.use(express.json()) // Parses requests to JSON format
 
 const port = 3000
-app.use("/", tools)
+app.use("/tools", tools)
 
 app.use((err, req, res, next) => {
   console.error(err)
