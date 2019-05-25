@@ -14,7 +14,8 @@
     "mongodb": "^3.2.5",
     "mongoose": "^5.5.9",
     "morgan": "^1.9.1",
-    "superstruct": "^0.6.1"
+    "superstruct": "^0.6.1",
+    "swagger-ui-express": "^4.0.4"
   },
   "devDependencies": {
     "@babel/cli": "^7.0.0",
