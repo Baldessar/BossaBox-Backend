@@ -27,7 +27,7 @@ router.delete("/:toolid", toolValidator.deleteTool, async (req, res) => {
 		/**
 		 * TODO validate mongoose ID
 		 */
-		await toolManager.deleteTool(req.validData)
+		await toolManager.deleteTool(req.validData.toolid)
 		res.json({})
 	} catch (error) {
 		throw error
