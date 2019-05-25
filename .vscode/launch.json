@@ -18,6 +18,20 @@
             "name": "Launch Program",
             "program": "${workspaceFolder}/src/app.js",
             "sourceMaps": true,
-        }
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Jest All",
+            "program": "${workspaceFolder}/node_modules/jest/bin/jest",
+            "args": [
+                "test",
+                "--runInBand",
+                "--no-cache"
+            ],
+            "sourceMaps": false,
+            "console": "integratedTerminal",
+            "internalConsoleOptions": "neverOpen"
+        },
     ]
 }

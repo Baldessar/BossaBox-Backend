@@ -25,6 +25,7 @@
     "eslint": "^5.16.0",
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-plugin-import": "^2.17.2",
+    "mongodb-memory-server": "^5.1.2",
     "nodemon": "^1.19.0",
     "rimraf": "^2.6.3"
   },
