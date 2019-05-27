@@ -1,0 +1,15 @@
+mongo:
+  image: mongo:3.0.4
+  ports:
+    - "27017:27017"
+  volumes:
+    - "./data:/data/db"
+application:
+  build: .
+  command: bash -c "nodemon --exec babel-node src/app.js --inspect"
+  ports:
+    - "3000:3000"
+  volumes:
+    - ./app:/usr/src/app
+  links:
+    - mongo
