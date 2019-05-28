@@ -15,6 +15,6 @@ export const login = async ({ login, password }) => {
   if (!user) return "user not registered"
   const correctPassword = bcrypt.compareSync(password, user.password)
   if (correctPassword) {
-    return jwt.sign({ login, exp: 600 }, "bossaBox")
+    return jwt.sign({ login }, "bossaBox", { expiresIn: 600 })
   }
 }

@@ -2,7 +2,11 @@ import jwt from "jsonwebtoken"
 
 const authenticateUser = async (req, res, next) => {
   try {
-    const token = req.headers.authorization
+    let token = req.headers.authorization
+    if (/^bearer/i.test(token)) {
+      token = token.split(" ")[1]
+    }
+    const decoded = jwt.decode(token)
     await jwt.verify(token, "bossaBox")
     next()
   } catch (error) {
