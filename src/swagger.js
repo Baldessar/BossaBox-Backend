@@ -81,6 +81,54 @@ const swaggerDocument = {
         },
       },
     },
+    "auth/register": {
+      post: {
+        tags: ["Auth"],
+        summary: "Register new User on sytem",
+        parameters: [
+          {
+            name: "login",
+            in: "Body",
+            description: "User login name",
+          },
+          {
+            name: "password",
+            in: "Body",
+            description: "User password",
+          },
+        ],
+        responses: {
+          "200": {
+            description: "User is registered",
+            schema: { error: false },
+          },
+        },
+      },
+    },
+    "auth/login": {
+      post: {
+        tags: ["Auth"],
+        summary: "Login User on sytem",
+        parameters: [
+          {
+            name: "login",
+            in: "Body",
+            description: "User login name",
+          },
+          {
+            name: "password",
+            in: "Body",
+            description: "User password",
+          },
+        ],
+        responses: {
+          "200": {
+            description: "Returns a jwt token",
+            schema: { token: "JWT TOKEN" },
+          },
+        },
+      },
+    },
   },
   definitions: {
     Tool: {

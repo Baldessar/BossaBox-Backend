@@ -37,6 +37,9 @@
     "build": "rimraf dist/ && babel ./ --out-dir dist/ --ignore ./node_modules,./.babelrc,./package.json,./npm-debug.log --copy-files --source-maps",
     "start": "nodemon --exec babel-node src/app.js --inspect"
   },
+  "jest": {
+    "testEnvironment": "node"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Baldessar/BossaBox-Backend.git"

@@ -1,5 +1,5 @@
 import mongoose from "mongoose"
-import "../mongoose/models/user"
+import "../mongoose/models/users"
 import bcrypt from "bcrypt"
 import jwt from "jsonwebtoken"
 
@@ -11,10 +11,15 @@ export const register = async ({ login, password }) => {
   return Boolean(ok)
 }
 export const login = async ({ login, password }) => {
-  const user = await userModel.findOne({ login })
-  if (!user) return "user not registered"
-  const correctPassword = bcrypt.compareSync(password, user.password)
-  if (correctPassword) {
-    return jwt.sign({ login }, "bossaBox", { expiresIn: 600 })
+  try {
+    const user = await userModel.findOne({ login })
+    if (!user) throw new Error("Wrong login or password")
+    const correctPassword = bcrypt.compareSync(password, user.password)
+    if (correctPassword) {
+      return jwt.sign({ login }, "bossaBox", { expiresIn: 600 })
+    }
+  } catch (error) {
+    error.reason = error.message
+    throw error
   }
 }
