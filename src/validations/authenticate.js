@@ -6,7 +6,6 @@ const authenticateUser = async (req, res, next) => {
     if (/^bearer/i.test(token)) {
       token = token.split(" ")[1]
     }
-    const decoded = jwt.decode(token)
     await jwt.verify(token, "bossaBox")
     next()
   } catch (error) {
