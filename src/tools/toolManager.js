@@ -1,5 +1,5 @@
 import mongoose from "mongoose"
-import "../mongoose/tools"
+import "../mongoose/models/tools"
 
 const Tools = mongoose.model("tools")
 

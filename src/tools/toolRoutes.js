@@ -1,9 +1,10 @@
 import express from "express"
 import * as toolManager from "./toolManager"
 import * as toolValidator from "../validations/toolsValidator"
+import authenticate from "../validations/authenticate"
 const router = express.Router()
 
-router.get("/", toolValidator.getTools, async (req, res) => {
+router.get("/", authenticate, toolValidator.getTools, async (req, res) => {
   try {
     const tools = await toolManager.getTools(req.validData)
     res.send(tools)
@@ -12,7 +13,7 @@ router.get("/", toolValidator.getTools, async (req, res) => {
   }
 })
 
-router.post("/", toolValidator.insertTool, async (req, res) => {
+router.post("/", authenticate, toolValidator.insertTool, async (req, res) => {
   try {
     const newTool = await toolManager.insertTool(req.validData)
     res.json(newTool)
@@ -21,7 +22,7 @@ router.post("/", toolValidator.insertTool, async (req, res) => {
   }
 })
 
-router.delete("/:toolid", toolValidator.deleteTool, async (req, res) => {
+router.delete("/:toolid", authenticate, toolValidator.deleteTool, async (req, res) => {
   try {
     /**
      * TODO validate mongoose ID
