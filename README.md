@@ -2,6 +2,6 @@
 
 ## How to use
 
-    First of all, download the project and run `Insira o código`
+    First of all, download the project and run `npm install`
 
 BossaBox Back-end test
