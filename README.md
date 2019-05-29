@@ -6,6 +6,10 @@
 
 ## How to use
 
-1. Use `npm install` to install all needed packages;
+- Use `npm install` command to install all needed packages;
+
+- Use `npm start` to run the projects
+
+- Use `npm test` to run all avaiable tests
 
 BossaBox Back-end test
