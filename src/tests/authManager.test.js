@@ -17,37 +17,25 @@ afterEach(async () => {
 })
 
 test("Register User", async () => {
-  try {
-    await authManager.register({ login: "bossa", password: "box" })
-    const expected = await Users.countDocuments()
-    expect(expected).toBe(1)
-  } catch (error) {
-    throw error
-  }
+  await authManager.register({ login: "bossa", password: "box" })
+  const expected = await Users.countDocuments()
+  expect(expected).toBe(1)
 })
 
 test("login User", async () => {
-  try {
-    await authManager.register({ login: "bossa", password: "box" })
-    const token = await authManager.login({ login: "bossa", password: "box" })
-    const expected = await Users.findOne({ login: "bossa" })
-    expect(jwt.verify(token, "bossaBox")).toBeTruthy()
-    expect(expected.login).toBe("bossa")
-  } catch (error) {
-    throw error
-  }
+  await authManager.register({ login: "bossa", password: "box" })
+  const token = await authManager.login({ login: "bossa", password: "box" })
+  const expected = await Users.findOne({ login: "bossa" })
+  expect(jwt.verify(token, "bossaBox")).toBeTruthy()
+  expect(expected.login).toBe("bossa")
 })
 
 test("login User", async () => {
-  try {
-    await authManager.register({ login: "bossa", password: "box" })
-    const token = await authManager.login({ login: "bossa", password: "box" })
-    const expected = await Users.findOne({ login: "bossa" })
-    expect(jwt.verify(token, "bossaBox")).toBeTruthy()
-    expect(expected.login).toBe("bossa")
-  } catch (error) {
-    throw error
-  }
+  await authManager.register({ login: "bossa", password: "box" })
+  const token = await authManager.login({ login: "bossa", password: "box" })
+  const expected = await Users.findOne({ login: "bossa" })
+  expect(jwt.verify(token, "bossaBox")).toBeTruthy()
+  expect(expected.login).toBe("bossa")
 })
 
 test("login User with wrong data", async () => {
