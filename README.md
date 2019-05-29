@@ -1,15 +1,7 @@
 # BossaBox-Backend
 
-# H1
+## How to use
 
-## H2
-
-### H3
-
-#### H4
-
-##### H5
-
-###### H6
+    First of all, download the project and run `npm install`
 
 BossaBox Back-end test
