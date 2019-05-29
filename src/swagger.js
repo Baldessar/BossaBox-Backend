@@ -2,15 +2,15 @@ const swaggerDocument = {
   swagger: "2.0",
   info: {
     version: "1.0.0",
-    title: "Yet Another Node.js Blogg Application API",
-    description: "Yet Another Node.js Blogg Application API",
+    title: "Bossa Box challange",
+    description: "Bossa Box challange",
     license: {
       name: "MIT",
       url: "https://opensource.org/licenses/MIT",
     },
   },
   host: "localhost:3000",
-  basePath: "/api/v1",
+  basePath: "/",
   tags: [
     {
       name: "Tools",
