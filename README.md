@@ -6,4 +6,6 @@
 
 ## How to use
 
+1. Use `npm install` to install all needed packages;
+
 BossaBox Back-end test
