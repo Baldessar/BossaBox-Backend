@@ -14,7 +14,7 @@
     "jest": "^24.8.0",
     "jsonwebtoken": "^8.5.1",
     "mongodb": "^3.2.6",
-    "mongoose": "^5.5.9",
+    "mongoose": "^5.7.5",
     "morgan": "^1.9.1",
     "superstruct": "^0.6.1",
     "swagger-ui-express": "^4.0.4"
